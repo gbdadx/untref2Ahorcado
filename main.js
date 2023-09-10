@@ -56,7 +56,8 @@ teclado2.forEach((t) => t.addEventListener('click', () => {
     letra = parseInt(letra);//lo convierte en numero
 
     let letra2 = String.fromCharCode(letra);//ese numero lo convierte en caracter ascii, en letra
-contador++;
+    contador++;
+    console.log(`contador ${contador}`);
     //busca si la letra esta en la cadena seleccionada al azar 'aleatorio'
     if (aleatorio.includes(letra2)) {
 
@@ -83,16 +84,16 @@ contador++;
     if (!listaOK.includes('_')) {
         // Agregar un retraso al mensaje de confirmación
         setTimeout(function () {
-            if (confirm(`¡GANASTE! fueron ${contador} intentos (tenias disponibles ${aleatorio.length+5} intentos) ¿Quieres reiniciar el juego?`)) {
+            if (confirm(`¡GANASTE! fueron ${contador} intentos (tenias disponibles ${aleatorio.length + 5} intentos) ¿Quieres reiniciar el juego?`)) {
                 location.reload();
             }
         }, 1000);
         // Cambia 1000 a la cantidad de milisegundos que desees de retraso
     }
-    if (contador >= aleatorio.length+5) {
+    if (contador >= aleatorio.length + 5) {
         // Agregar un retraso al mensaje de confirmación de derrota
         setTimeout(function () {
-            if (confirm(`Has superado los  intentos (${contador})(intentos=longitud palabra misteriosa)(tenias disponibles ${aleatorio.length+5} intentos) . ¡Perdiste! ¿Quieres reiniciar el juego?`)) {
+            if (confirm(`Has superado los  intentos (${contador})(intentos=longitud palabra misteriosa)(tenias disponibles ${aleatorio.length + 5} intentos) . ¡Perdiste! ¿Quieres reiniciar el juego?`)) {
                 location.reload();
             }
         }, 1000);

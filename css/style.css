@@ -87,8 +87,55 @@
   .guiones {
       font-size: 3rem;
   }
-  header{
-display: flex; 
-align-items: center;
-justify-content: center;
-}
+
+  header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+
+  /* mediaqueries*/
+  @media (width <= 996px) {
+   
+      main {
+          display: flex;
+          flex-direction: column;
+      }
+
+      .contenedor2,
+      .contenedor {
+          width: 100vw;
+          height: 45vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding:1rem;
+      }
+    
+  }
+  @media (width <= 300px) {
+    html{
+        font-size: 0.6rem;
+    }
+
+  }
+  @media (width > 300px) {
+    html{
+        font-size: 0.75rem;
+    }
+
+  }
+  @media (width >= 500px) {
+    html{
+        font-size: 1rem;
+    }
+
+  }
+  @media (width >= 700px){
+    html{
+        font-size: 1rem;
+    }
+
+  }
+   
+
