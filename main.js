@@ -108,6 +108,7 @@ teclado2.forEach((t) => t.addEventListener('click', () => {
     if (contadorErrores == imagenes.length - 1) {
         // Agregar un retraso al mensaje de confirmación de derrota
         setTimeout(function () {
+
             if (confirm(`Has superado los  intentos . ¡Perdiste! ¿Quieres reiniciar el juego?`)) {
                 location.reload();
               
