@@ -6,6 +6,19 @@ let aleatorio = palabras[Math.floor(Math.random() * palabras.length)];
 const abcd = document.querySelector('.abc')
 let teclado = '';
 
+let contadorErrores = 0;
+const imagenes = [
+    './imgAhorcado/horca.png',
+    './imgAhorcado/horcaCabeza.png',
+    './imgAhorcado/horcaCuerpo.png',
+    './imgAhorcado/horcaBrI.png',
+    './imgAhorcado/horcaBrD.png',
+    './imgAhorcado/horcaPiz.png',
+    './imgAhorcado/horcaPde.png',
+    './imgAhorcado/ahorcado.png'
+];
+
+
 function teclador() {//arma teclado con ascii
     for (let i = 97; i <= 122; i++) {
         let letra = String.fromCharCode(i);
@@ -57,6 +70,7 @@ teclado2.forEach((t) => t.addEventListener('click', () => {
 
     let letra2 = String.fromCharCode(letra);//ese numero lo convierte en caracter ascii, en letra
     contador++;
+
     console.log(`contador ${contador}`);
     //busca si la letra esta en la cadena seleccionada al azar 'aleatorio'
     if (aleatorio.includes(letra2)) {
@@ -70,7 +84,11 @@ teclado2.forEach((t) => t.addEventListener('click', () => {
             }
         }
     } else {
-
+        // Incrementa el contador de errores
+        contadorErrores++;
+        let contImg = document.querySelector('#imagen')
+        var im = imagenes[contadorErrores]
+        contImg.setAttribute('src', im);
 
         listaNo.push(letra2);
 
@@ -78,23 +96,21 @@ teclado2.forEach((t) => t.addEventListener('click', () => {
     }
     console.log(`longitud palabra misteriosa: ${aleatorio.length}`)
 
-
-
-
     if (!listaOK.includes('_')) {
         // Agregar un retraso al mensaje de confirmación
         setTimeout(function () {
-            if (confirm(`¡GANASTE! fueron ${contador} intentos (tenias disponibles ${aleatorio.length + 5} intentos) ¿Quieres reiniciar el juego?`)) {
+            if (confirm(`¡GANASTE! fueron ${contador} intentos  ¿Quieres reiniciar el juego?`)) {
                 location.reload();
             }
         }, 1000);
         // Cambia 1000 a la cantidad de milisegundos que desees de retraso
     }
-    if (contador >= aleatorio.length + 5) {
+    if (contadorErrores == imagenes.length - 1) {
         // Agregar un retraso al mensaje de confirmación de derrota
         setTimeout(function () {
-            if (confirm(`Has superado los  intentos (${contador})(intentos=longitud palabra misteriosa)(tenias disponibles ${aleatorio.length + 5} intentos) . ¡Perdiste! ¿Quieres reiniciar el juego?`)) {
+            if (confirm(`Has superado los  intentos . ¡Perdiste! ¿Quieres reiniciar el juego?`)) {
                 location.reload();
+              
             }
         }, 1000);
     }
@@ -106,15 +122,10 @@ console.log(listaOK)
 /**
  * boton reset
  */
-
-
 const reset = document.querySelector('.btn-reset');
 reset.addEventListener('click', () => {
     location.reload();
 })
-
-window.alert.c
-
 
 
 

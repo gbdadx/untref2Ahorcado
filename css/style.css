@@ -20,7 +20,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      background-color: white;
+      background-color: grey;
       height: 100vh;
 
   }
@@ -31,9 +31,15 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      background-color: white;
+      background-color: brown;
       height: 100vh;
   }
+  .imagen{
+    height:70%;
+    width:100%;
+    background-color: aqua;
+  }
+  
 
   .abc {
       display: flex;
@@ -62,14 +68,14 @@
   }
 
   .btn-reset {
-      width: 15rem;
-      padding: 1rem;
-      font-size: 1.5rem;
-      letter-spacing: 1rem;
+      width: 10rem;
+      padding: 0.5rem;
+      font-size: 1rem;
+      letter-spacing: 0.5rem;
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: 0.75rem;
+      border-radius: 0.5rem;
       border: 1px solid cadetblue;
       background-color: cadetblue;
       color: white;
@@ -105,12 +111,18 @@
       .contenedor2,
       .contenedor {
           width: 100vw;
-          height: 45vh;
+          height: 55vh;
           display: flex;
           justify-content: center;
           align-items: center;
           padding:1rem;
       }
+     .contenedor{
+        height:40%;
+     }
+     .contenedor2{
+        height:60%;
+     }
     
   }
   @media (width <= 300px) {
